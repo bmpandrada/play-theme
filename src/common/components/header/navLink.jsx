@@ -1,8 +1,21 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const NavvLink = ({ navbarTogglerActive }) => {
   const newLocal = "blcok lg:flex 2xl:ml-20";
+  const common = "flex py-2 mx-8 text-base font-medium ud-menu-scroll";
+  const base =
+    "text-dark group-hover:text-primary dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70";
+  const active =
+    "text-primary group-hover:text-primary dark:text-white/50 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 active";
+
+  const dataNav = [
+    { label: "Home", to: "/" },
+    { label: "About", to: "/about" },
+    { label: "Blog", to: "/blog" },
+    { label: "Contact", to: "/contact" },
+  ];
+
   return (
     <nav
       id='navbarCollapse'
@@ -11,54 +24,19 @@ const NavvLink = ({ navbarTogglerActive }) => {
       } absolute right-4 top-full  w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:px-4 lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6`}
     >
       <ul className={newLocal}>
-        <li className='relative group'>
-          <Link
-            to='/'
-            className='flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70'
-          >
-            Home
-          </Link>
-        </li>
-        <li className='relative group'>
-          <Link
-            to='/about'
-            className='flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10'
-          >
-            About
-          </Link>
-        </li>
-        <li className='relative group'>
-          <Link
-            to='pricing'
-            className='flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10'
-          >
-            Pricing
-          </Link>
-        </li>
-        <li className='relative group'>
-          <Link
-            to='team'
-            className='flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10'
-          >
-            Team
-          </Link>
-        </li>
-        <li className='relative group'>
-          <Link
-            to='contact'
-            className='flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10'
-          >
-            Contact
-          </Link>
-        </li>
-        <li className='relative group'>
-          <Link
-            to='blog-grids'
-            className='flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10'
-          >
-            Blog
-          </Link>
-        </li>
+        {dataNav.map((item, index) => (
+          <li className='relative group' key={index}>
+            <NavLink
+              to={item.to}
+              className={({ isActive }) =>
+                `${common} ${isActive ? active : base}`
+              }
+            >
+              {item.label}
+            </NavLink>
+          </li>
+        ))}
+
         <li className='relative submenu-item group'>
           <Link
             to='/'

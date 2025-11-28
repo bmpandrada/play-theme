@@ -13,9 +13,8 @@ const HeaderNav = () => {
     return localStorage.getItem("theme") === "dark";
   });
 
-  const location = useLocation(); // para ma-detect route change
+  const location = useLocation();
 
-  // Sync <html> class with theme
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
@@ -32,15 +31,14 @@ const HeaderNav = () => {
     });
   };
 
-  // Sticky header & scroll spy
   useEffect(() => {
     const pageLinks = Array.from(
       document.querySelectorAll(".ud-menu-scroll"),
-    ).filter((link) => link.getAttribute("to")?.startsWith("#")); // only hash links
+    ).filter((link) => link.getAttribute("to")?.startsWith("#"));
 
     const handleClick = (e) => {
       const targetId = e.currentTarget.getAttribute("to");
-      if (!targetId.startsWith("#")) return; // skip normal router links
+      if (!targetId.startsWith("#")) return;
 
       e.preventDefault();
       const target = document.querySelector(targetId);
@@ -72,7 +70,7 @@ const HeaderNav = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // init on mount
+    handleScroll();
 
     return () => {
       pageLinks.forEach((link) =>
@@ -80,7 +78,7 @@ const HeaderNav = () => {
       );
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [location]); // re-run on route change
+  }, [location]);
 
   const handleActive = () => setNavbarTogglerActive((prev) => !prev);
 
