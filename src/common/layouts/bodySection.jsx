@@ -5,6 +5,7 @@ import FeaturesSection from "../components/sections/featureSection";
 import CtaSection from "../components/sections/ctaSection";
 import BlogSection from "../components/sections/blogSection";
 import AboutSection from "../components/sections/aboutSection";
+import TechLogoSection from "../components/sections/techLogoSection";
 
 const BodySection = () => {
   return (
@@ -18,6 +19,7 @@ const BodySection = () => {
         <AboutSection />
         <CtaSection />
         <BlogSection />
+        <TechLogoSection />
       </div>
     </>
   );
