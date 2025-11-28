@@ -15,6 +15,8 @@ const HeaderNav = () => {
 
   const location = useLocation();
 
+  const isHome = location.pathname === "/";
+
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
@@ -70,7 +72,7 @@ const HeaderNav = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); 
 
     return () => {
       pageLinks.forEach((link) =>
@@ -82,15 +84,19 @@ const HeaderNav = () => {
 
   const handleActive = () => setNavbarTogglerActive((prev) => !prev);
 
+  const headerClasses = `${
+    isHome
+      ? isSticky
+        ? "bg-white shadow-md dark:bg-dark-2"
+        : "bg-transparent"
+      : "bg-white dark:bg-dark-2 shadow-md"
+  } absolute top-0 left-0 z-40 flex items-center w-full transition-all duration-300`;
+
   return (
-    <div
-      className={`absolute top-0 left-0 z-40 flex items-center w-full ud-header transition-all duration-300 ${
-        isSticky ? "sticky top-0 bg-white shadow-md" : "bg-transparent"
-      }`}
-    >
-      <div className='container px-4 mx-auto'>
+    <div className={headerClasses}>
+      <div className='container px-4 mx-auto '>
         <div className='relative flex items-center justify-between -mx-4'>
-          <HeaderLogo isSticky={isSticky} isDark={isDark} />
+          <HeaderLogo isSticky={isSticky || !isHome} isDark={isDark} />
           <div className='flex items-center justify-between w-full px-4'>
             <div>
               <HeaderToggle
