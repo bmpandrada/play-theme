@@ -1,9 +1,10 @@
 import React from "react";
 import HeroPlay from "../components/hero/heroPlay";
 import FeaturesSection from "../components/sections/featureSection";
-import AboutSection from "../components/sections/AboutSection";
+
 import CtaSection from "../components/sections/ctaSection";
 import BlogSection from "../components/sections/blogSection";
+import AboutSection from "../components/sections/aboutSection";
 
 const BodySection = () => {
   return (
