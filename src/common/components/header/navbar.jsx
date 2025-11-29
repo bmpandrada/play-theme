@@ -99,6 +99,8 @@ const HeaderNav = () => {
               <HeaderToggle
                 handleActive={handleActive}
                 navbarTogglerActive={navbarTogglerActive}
+                isDark={isDark}
+                isSticky={isSticky || !isHome}
               />
               <NavvLink navbarTogglerActive={navbarTogglerActive} />
             </div>
