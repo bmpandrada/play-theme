@@ -9,12 +9,12 @@ const SignLink = ({
 }) => {
   const singInClass =
     !isHome || (!isSticky && isDark)
-      ? "text-dark opacity-70 dark:text-white"
-      : "text-white";
+      ? "text-dark dark:text-white"
+      : "lg:text-white";
 
   const singUpClass =
-    !isHome || (!isSticky && isDark)
-      ? "text-dark dark:text-white dark:bg-red-500 signUpBtn2"
+    !isHome || (!isSticky && !isDark)
+      ? "lg:text-white signUpBtn2"
       : "text-white signUpBtn";
 
   return (
