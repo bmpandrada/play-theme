@@ -43,7 +43,7 @@ const NavvLink = ({ navbarTogglerActive }) => {
           </li>
         ))}
 
-        <li className='relative submenu-item group'>
+        {/* <li className='relative submenu-item group'>
           <NavLink
             to='/'
             className={
@@ -78,13 +78,13 @@ const NavvLink = ({ navbarTogglerActive }) => {
               Pricing Page
             </Link>
             <Link
-              to='contact'
+              to='/contact'
               className='block rounded-sm px-4 py-2.5 text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary'
             >
               Contact Page
             </Link>
             <Link
-              to='blog-grids'
+              to='/blog'
               className='block rounded-sm px-4 py-2.5 text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary'
             >
               Blog Grid Page
@@ -96,13 +96,13 @@ const NavvLink = ({ navbarTogglerActive }) => {
               Blog Details Page
             </Link>
             <Link
-              to='signup'
+              to='/signup'
               className='block rounded-sm px-4 py-2.5 text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary'
             >
               Sign Up Page
             </Link>
             <Link
-              to='signin'
+              to='/signin'
               className='block rounded-sm px-4 py-2.5 text-sm text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary'
             >
               Sign In Page
@@ -114,7 +114,7 @@ const NavvLink = ({ navbarTogglerActive }) => {
               404 Page
             </Link>
           </div>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
