@@ -2635,11 +2635,11 @@
 }
 
 .signUpBtn2 {
-  background-color: var(--color-primary);
+  background-color: var(--color-blue-dark);
   color: var(--color-white);
   &:hover {
     @media (hover: hover) {
-      background-color: var(--color-blue-dark);
+      background-color: var(--color-primary);
     }
   }
   &:hover {
