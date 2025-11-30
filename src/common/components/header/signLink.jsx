@@ -8,12 +8,12 @@ const SignLink = ({
   customClass = "hidden lg:flex",
 }) => {
   const singInClass =
-    !isHome || (!isSticky && !isDark)
+    !isHome || (!isSticky && isDark)
       ? "text-dark opacity-70 dark:text-white"
       : "text-white";
 
   const singUpClass =
-    !isHome || (!isSticky && !isDark)
+    !isHome || (!isSticky && isDark)
       ? "text-dark dark:text-white dark:bg-red-500 signUpBtn2"
       : "text-white signUpBtn";
 
