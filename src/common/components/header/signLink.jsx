@@ -1,21 +1,28 @@
 import { Link } from "react-router";
 
 const SignLink = ({
-  isDark,
+  isSticky,
   isHome,
+  isDark,
   handleActive,
   customClass = "hidden lg:flex",
 }) => {
+  const singInClass =
+    !isHome || (!isSticky && !isDark)
+      ? "text-dark opacity-70 dark:text-white"
+      : "text-white";
+
+  const singUpClass =
+    !isHome || (!isSticky && !isDark)
+      ? "text-dark dark:text-white dark:bg-red-500 signUpBtn2"
+      : "text-white signUpBtn";
+
   return (
     <div className={`${customClass}`}>
       <Link
         to='/signin'
         onClick={handleActive}
-        className={`loginBtn px-[22px] py-2 text-base font-medium hover:opacity-70 ${
-          isDark || !isHome
-            ? "text-dark opacity-70 dark:text-white"
-            : "text-white"
-        }`}
+        className={`loginBtn px-[22px] py-2 text-base font-medium hover:opacity-70 ${singInClass}`}
       >
         Sign In
       </Link>
@@ -23,11 +30,7 @@ const SignLink = ({
         to='/signup'
         onClick={handleActive}
         className={` px-6 py-2 text-base font-medium duration-300 ease-in-out rounded-md bg-white/20  hover:bg-white hover:text-dark
-          ${
-            isDark || !isHome
-              ? "text-dark dark:text-white dark:bg-red-500 signUpBtn2"
-              : "text-white signUpBtn"
-          }`}
+          ${singUpClass}`}
       >
         Sign Up
       </Link>

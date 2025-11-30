@@ -38,7 +38,11 @@ const HeaderNav = () => {
                 isHome={isHome}
                 toggleTheme={toggleTheme}
               />
-              <SignLink isDark={isDark} isHome={isHome} />
+              <SignLink
+                isSticky={isSticky || !isHome}
+                isDark={isDark}
+                isHome={isHome}
+              />
             </div>
           </div>
         </div>
