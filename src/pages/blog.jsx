@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AboutSection from "../common/components/sections/aboutSection";
 import TechLogoSection from "../common/components/sections/techLogoSection";
 import HeaderBannerPage from "../common/components/header/headerBannerPage";
@@ -6,6 +6,9 @@ import BlogGrids from "../common/components/blogGrids";
 import Pagination from "../common/components/pagination";
 
 const BlogPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeaderBannerPage main_title={"Blog"} title={"Home"} subtitle={"Blog"} />

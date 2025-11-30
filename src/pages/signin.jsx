@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeaderBannerPage from "../common/components/header/headerBannerPage";
 import { useTheme } from "../common/context/contextApi";
 
 const SignInPage = () => {
   const { isDark } = useTheme();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeaderBannerPage

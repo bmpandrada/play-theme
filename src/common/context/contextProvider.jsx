@@ -57,7 +57,7 @@ export function ContextProvider({ children }) {
         window.pageYOffset || document.documentElement.scrollTop;
 
       pageLinks.forEach((link) => {
-        const target = document.querySelector(link.getAttribute("to"));
+        const target = document.querySelector(link.getAttribute("to id"));
         if (!target) return;
         const top = target.offsetTop - 73;
         const bottom = top + target.offsetHeight;
